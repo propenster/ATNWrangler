@@ -1,0 +1,6 @@
+# ninja log v5
+45	2210	7548098979714827	CMakeFiles/ATNWrangler.dir/ATNWrangler.cpp.obj	3e46bdd919660b
+30	2056	7548097186667793	CMakeFiles/ATNWrangler.dir/Turing.cpp.obj	2e485a382030a5b6
+37	2272	7544507359955833	CMakeFiles/ATNWrangler.dir/BooleanNetworkModel.cpp.obj	51e1b1d337ef30d6
+32	53	0	clean	8c45b54705a541e8
+2211	2663	7548098982873005	ATNWrangler.exe	61bf6c93172e008e
