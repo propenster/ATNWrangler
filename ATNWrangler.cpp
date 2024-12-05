@@ -56,8 +56,14 @@ int main(int*, char**)
 		/*float result = turing.InferenceA(input);
 		std::cout << "Result of " << input << " is " << result << " DDXX " << (result < 0.05 ? "YES" : "NO") << "\n";*/
 
-		int result = turing.InferenceB(input);
-		std::cout << "Result of " << input << " is " << result << " DDXX " << (result >= 30 ? "YES" : "NO") << "\n";
+		/*int result = turing.InferenceB(input);
+		std::cout << "Result of " << input << " is " << result << " DDXX " << (result >= 30 ? "YES" : "NO") << "\n";*/
+
+		/*int result = turing.InferenceC(input);
+		std::cout << "Result of " << input << " DDXX " << (result ? "YES" : "NO") << "\n";*/
+
+		int result = turing.InferenceD(input);
+		std::cout << "Result of " << input << " DDXX " << (result ? "YES" : "NO") << "\n";
 	}
 
 	std::vector<std::vector<int>> initialState = {

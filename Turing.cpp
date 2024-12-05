@@ -2,6 +2,7 @@
 #include "Turing.h"
 #include <iostream>
 #include <unordered_map>
+#include <array>
 
 
 namespace Turing
@@ -77,7 +78,7 @@ namespace Turing
 		std::string intermediate = std::to_string(dnum);
 		std::string part = Turing::Turing::SplitString(intermediate, ".")[1];
 		int partSum = 0;
-		for (const char &c : part)
+		for (const char& c : part)
 		{
 			std::string x(1, c);
 			partSum += std::stoi(x);
@@ -85,6 +86,83 @@ namespace Turing
 
 		return partSum;
 		//return (float)1 / sum;
+	}
+	bool Turing::InferenceC(const std::string& input)
+	{
+		std::vector<std::string> nums = Turing::Turing::SplitString(input, " ");
+		if (nums.empty()) return -1;
+		std::vector<float> parsed;
+		float sum = 0;
+		for (const auto& item : nums)
+		{
+			//sum += std::stof(item);
+			parsed.push_back(std::stof(item));
+		}
+
+		float firstSum = parsed[0] + parsed[1] + parsed[2];
+		float secondSum = parsed[3] + parsed[4] + parsed[5];
+
+		float denum = firstSum / secondSum;
+
+		std::cout << "Sum of the constituents >>> " << denum << "\n";
+
+		float dnum = floorf(denum * 1000000) / 1000000;
+
+		if (dnum < 0.4) return false;
+
+		std::string intermediate = std::to_string(dnum);
+		std::string part = Turing::Turing::SplitString(intermediate, ".")[1];
+
+		if (part[0] != part[2]) return false;
+
+		return true;
+		/*int partSum = 0;
+		std::string first(1, part[0]);
+		std::string second(1, part[part.length() - 1]);
+
+		return std::stod(first) + std::stod(second);*/
+	}
+	bool Turing::InferenceD(const std::string& input)
+	{
+		std::vector<std::string> nums = Turing::Turing::SplitString(input, " ");
+		if (nums.empty()) return -1;
+		std::vector<float> parsed;
+		float sum = 0;
+		for (const auto& item : nums)
+		{
+			//sum += std::stof(item);
+			parsed.push_back(std::stof(item));
+		}
+
+		float firstSum = parsed[0] + parsed[1] + parsed[2];
+		float secondSum = parsed[3] + parsed[4] + parsed[5];
+
+		float denum = firstSum / secondSum;
+
+		std::cout << "Sum of the constituents >>> " << denum << "\n";
+
+		/*float dnum = floorf(denum * 1000000) / 1000000;
+
+		if (dnum < 0.4) return false;*/
+
+		std::string intermediate = std::to_string(denum);
+		std::string part = Turing::Turing::SplitString(intermediate, ".")[1];
+
+		std::array<std::string, 12> caches = { "865","677","65","67","57","494","595","574", "464", "74", "75", "76"};
+		for (const auto& item : caches)
+		{
+			if (part.find(item) == std::string::npos) continue;
+
+			return true;
+		}
+
+
+		return false;
+		/*int partSum = 0;
+		std::string first(1, part"0]);
+		std::string second(1, part[part.length() - 1]);
+
+		return std::stod(first) + std::stod(second);*/
 	}
 	std::string Turing::EnumToString(Keys key)
 	{

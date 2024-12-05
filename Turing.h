@@ -66,6 +66,8 @@ namespace Turing
 		bool Predict(Number* seedNumber, const Keys* key);
 		float InferenceA(const std::string& input);
 		int InferenceB(const std::string& input);
+		bool InferenceC(const std::string& input);
+		bool InferenceD(const std::string& input);
 
 	private:
 		Keys SetDefaultKey(const std::string& seed);
