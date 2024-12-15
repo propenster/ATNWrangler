@@ -5,6 +5,9 @@
 
 namespace Turing
 {
+	constexpr size_t POINT_LLAMA_SIZE = 59;
+
+	extern const std::array<std::string, POINT_LLAMA_SIZE> _POINT_LLAMA;
 	// these are the set randomization keys...they change daily
 	enum Keys
 	{
@@ -69,6 +72,8 @@ namespace Turing
 		bool InferenceC(const std::string& input);
 		bool InferenceD(const std::string& input);
 
+		bool SequencePositionSimilarityInference(const std::string& input);
+
 	private:
 		Keys SetDefaultKey(const std::string& seed);
 		std::vector<std::string> SplitString(const std::string& input, const std::string& delimiter);
@@ -76,6 +81,8 @@ namespace Turing
 		Number& GenerateNumber(const std::string& input);
 
 		Keys DeduceSeedKey(Number* seedNumber);
+
+		
 
 
 	private:

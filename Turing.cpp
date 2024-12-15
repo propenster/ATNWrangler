@@ -3,7 +3,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <array>
-
+#include <algorithm>
 
 namespace Turing
 {
@@ -17,7 +17,91 @@ namespace Turing
 	{
 		m_defaultKey = key;
 	}
+	static const std::array<std::string, POINT_LLAMA_SIZE> _POINT_LLAMA = {
+		"200 325 370",
+		"235 320 275",
+		"191 310 400"
+		"275 340 210",
+		"189 340 390",
+		"285 285 260",
+		"168 333 540",
+		"230 310 310",
+		"285 390 200",
+		"215 340 340",
+		"333 310 225",
+		"205 340 330",
+		"164 380 440",
+		"167 360 580",
+		"325 320 220",
+		"340 300 230",
+		"154 400 550",
+		"215 350 320",
+		"285 350 235",
+		"177 350 460",
+		"220 325 330",
+		"234 360 260",
+		"168 340 520",
+		"149 450 540",
+		"215 310 325",
+		"147 400 700",
+		"260 300 270",
+		"185 350 450",
+		"255 340 245",
+		"200 300 425",
+		"200 325 340",
+		"176 370 340",
+		"420 380 167",
+		"163 370 410",
+		"189 390 320",
+		"176 410 350",
+		"166 360 400",
+		"141 440 520",
+		"235 275 325",
+		"184 360 380",
+		"165 360 500",
+		"158 375 580",
+		"210 350 300",
+		"450 450 157",
+		"145 450 460",
+		"300 440 174",
+		"478 344 189",
+		"200 380 333",
+		"174 375 350",
+		
+		
+		/*"245 295 285",
+		"275 295 255",
+		"260 310 260",
+		"255 320 255",
+		"260 300 260",
+		"255 310 255",
+		"260 370 230",
+		"240 360 250",
+		"250 330 275",
+		"230 350 285",
+		"245 380 245",
+		"260 330 245",
+		"245 375 220",
+		"245 370 245",
+		"220 350 280",
+		"245 350 245",*/
 
+		"215 350 310",
+		"215 350 300",
+
+		"161 350 530",
+		"155 340 510",
+		"235 290 330",
+		"192 320 380",
+		"119 660 1250",
+		"153 425 470",
+		"245 300 300",
+		"240 310 310",
+
+
+
+
+	};
 	void Turing::Wrangle()
 	{
 	}
@@ -148,21 +232,53 @@ namespace Turing
 		std::string intermediate = std::to_string(denum);
 		std::string part = Turing::Turing::SplitString(intermediate, ".")[1];
 
-		std::array<std::string, 12> caches = { "865","677","65","67","57","494","595","574", "464", "74", "75", "76"};
+		std::array<std::string, 12> caches = { "865","677","65","67","57","494","595","574", "464", "74", "75", "76" };
 		for (const auto& item : caches)
 		{
 			if (part.find(item) == std::string::npos) continue;
 
 			return true;
 		}
-
-
 		return false;
-		/*int partSum = 0;
-		std::string first(1, part"0]);
-		std::string second(1, part[part.length() - 1]);
+	}
+	bool Turing::SequencePositionSimilarityInference(const std::string& input)
+	{
+		int totalScore = 0;
+		std::vector<std::string> target = SplitString(input, " ");
+		if (target.empty() || target.size() > 3) return false;
 
-		return std::stod(first) + std::stod(second);*/
+
+		for (size_t i = 0; i < POINT_LLAMA_SIZE; i++)
+		{
+			//search this guy...
+			std::string reference = _POINT_LLAMA[i];
+			std::vector<std::string> refCollection = SplitString(reference, " ");
+			for (size_t j = 0; j < target.size(); j++)
+			{
+				auto item = std::find(refCollection.begin(), refCollection.end(), target[j]);
+				if (item != refCollection.end()) //&& std::distance(refCollection.begin(), item) == j
+				{
+					size_t pos = std::distance(refCollection.begin(), item);
+					auto s = std::find(target.begin(), target.end(), target[j]);
+					size_t post_s = std::distance(target.begin(), s);
+					if (pos != post_s) continue;
+
+					totalScore++;
+				}
+			}
+			//std::cout << "Total Score >>> " << totalScore << "\n";
+
+			if (totalScore < 2) //if after evaluating this particular seed, we don't get at least 2 matches, we zero totalScore, and let it go on to another seed
+			{
+				totalScore = 0;
+			}
+			if (totalScore >= 2)
+			{
+				std::cout << "Total Score >>> " << totalScore << "\n";
+				break;
+			}
+		}
+		return totalScore >= 2;
 	}
 	std::string Turing::EnumToString(Keys key)
 	{
@@ -183,7 +299,7 @@ namespace Turing
 	bool Turing::Predict(Number* seedNumber, const Keys* key)
 	{
 		if (!seedNumber) return false;
-		bool isShigata, isRoboCop, isOffByOne, isShibetoshi = false;
+		bool isShigata, isRoboCop, isOffByOne, isShibetoshi, isFabrice = false;
 		bool result = true;
 
 		switch (*key)
@@ -226,6 +342,8 @@ namespace Turing
 				//260 340 250 -> 3+4=2+5+0
 				|| ((seedNumber->four + seedNumber->five == seedNumber->seven + seedNumber->eight + seedNumber->nine) || (seedNumber->seven + seedNumber->nine == seedNumber->five))
 
+				|| ((seedNumber->one + seedNumber->four == seedNumber->seven) || (seedNumber->one + seedNumber->four + seedNumber->five == seedNumber->eight) || (seedNumber->one + seedNumber->four + seedNumber->five == seedNumber->eight + seedNumber->nine))
+
 				//225 340 290 -> 2+2+5=9+0
 				//AND not 205 360 325 2+0+5=2+5 which is 7 bad luck in this case...
 				|| ((seedNumber->one + seedNumber->two + seedNumber->three == seedNumber->eight + seedNumber->nine) && (seedNumber->one + seedNumber->two + seedNumber->three != 7));
@@ -246,8 +364,18 @@ namespace Turing
 			if (!isShibetoshi) result = false;
 			break;
 
+
+
 		case FABRICE_BELLARD:
-			result = false;
+			isFabrice = (
+				(seedNumber->one + seedNumber->four + seedNumber->five == seedNumber->eight && seedNumber->one + seedNumber->four == seedNumber->seven)
+
+				|| (seedNumber->two == seedNumber->four + seedNumber->five + seedNumber->seven && seedNumber->one == seedNumber->four + seedNumber->seven)
+
+				);
+
+
+			if (!isFabrice) result = false;
 			break;
 
 

@@ -11,6 +11,11 @@ endif()
 
 project ("ATNWrangler")
 
+find_package(OpenCV REQUIRED)
+
+add_subdirectory(thirdparty/glad)
+add_subdirectory(thirdparty/raudio)
+
 # Add source to this project's executable.
 add_executable (ATNWrangler "ATNWrangler.cpp" "ATNWrangler.h" "Turing.h" "Turing.cpp" "BooleanNetworkModel.h" "BooleanNetworkModel.cpp")
 
@@ -19,3 +24,5 @@ if (CMAKE_VERSION VERSION_GREATER 3.12)
 endif()
 
 # TODO: Add tests and install targets if needed.
+
+#target_link_libraries(ATNWrangler PRIVATE opencv_core::opencv_core)

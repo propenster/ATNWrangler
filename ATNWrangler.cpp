@@ -18,6 +18,14 @@ static const std::vector<int> UpdateRule(std::vector<int> x)
 
 int main(int*, char**)
 {
+
+	std::string image_path = "path/to/image";
+	/*Mat img = imread(image_path, IMREAD_COLOR);
+
+	imshow("Display window", img);
+	int k = waitKey(0);*/
+
+
 	std::cout << "Size of string on my PC " << sizeof(std::string_view) << " bytes\n";
 	int a = 28, b = 34;
 
@@ -28,7 +36,7 @@ int main(int*, char**)
 	turing.DisplayTag();
 
 	std::string input;
-	const Turing::Keys key = Turing::Keys::OFFBYONE; //, SHIGATAKANAI_FLAT, Turing::Keys::SHIBETOSHI_NAKAMOTO;
+	const Turing::Keys key = Turing::Keys::FABRICE_BELLARD; //, SHIGATAKANAI_FLAT, Turing::Keys::SHIBETOSHI_NAKAMOTO; ROBOCOP, OFFBYONE
 	while (true)
 	{
 		std::cout << "Enter the score to verify via Turing Wrangler e.g: 272 307 280: ";
@@ -62,7 +70,10 @@ int main(int*, char**)
 		/*int result = turing.InferenceC(input);
 		std::cout << "Result of " << input << " DDXX " << (result ? "YES" : "NO") << "\n";*/
 
-		int result = turing.InferenceD(input);
+		/*int result = turing.InferenceD(input);
+		std::cout << "Result of " << input << " DDXX " << (result ? "YES" : "NO") << "\n";*/
+		
+		int result = turing.SequencePositionSimilarityInference(input);
 		std::cout << "Result of " << input << " DDXX " << (result ? "YES" : "NO") << "\n";
 	}
 

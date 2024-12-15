@@ -1,3 +1,15 @@
 D:/source/cpp/ATNWrangler/out/build/x64-debug/CMakeFiles/ATNWrangler.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/CMakeFiles/package.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/CMakeFiles/package_source.dir
 D:/source/cpp/ATNWrangler/out/build/x64-debug/CMakeFiles/edit_cache.dir
 D:/source/cpp/ATNWrangler/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/glad/CMakeFiles/glad.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/glad/CMakeFiles/package.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/glad/CMakeFiles/package_source.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/glad/CMakeFiles/edit_cache.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/glad/CMakeFiles/rebuild_cache.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/raudio/CMakeFiles/raudio.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/raudio/CMakeFiles/package.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/raudio/CMakeFiles/package_source.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/raudio/CMakeFiles/edit_cache.dir
+D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/raudio/CMakeFiles/rebuild_cache.dir

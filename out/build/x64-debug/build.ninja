@@ -54,21 +54,21 @@ build CMakeFiles\ATNWrangler.dir\ATNWrangler.cpp.obj: CXX_COMPILER__ATNWrangler_
   OBJECT_DIR = CMakeFiles\ATNWrangler.dir
   OBJECT_FILE_DIR = CMakeFiles\ATNWrangler.dir
   TARGET_COMPILE_PDB = CMakeFiles\ATNWrangler.dir\
-  TARGET_PDB = ATNWrangler.pdb
+  TARGET_PDB = bin\ATNWrangler.pdb
 
 build CMakeFiles\ATNWrangler.dir\Turing.cpp.obj: CXX_COMPILER__ATNWrangler_unscanned_Debug D$:\source\cpp\ATNWrangler\Turing.cpp || cmake_object_order_depends_target_ATNWrangler
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
   OBJECT_DIR = CMakeFiles\ATNWrangler.dir
   OBJECT_FILE_DIR = CMakeFiles\ATNWrangler.dir
   TARGET_COMPILE_PDB = CMakeFiles\ATNWrangler.dir\
-  TARGET_PDB = ATNWrangler.pdb
+  TARGET_PDB = bin\ATNWrangler.pdb
 
 build CMakeFiles\ATNWrangler.dir\BooleanNetworkModel.cpp.obj: CXX_COMPILER__ATNWrangler_unscanned_Debug D$:\source\cpp\ATNWrangler\BooleanNetworkModel.cpp || cmake_object_order_depends_target_ATNWrangler
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI
   OBJECT_DIR = CMakeFiles\ATNWrangler.dir
   OBJECT_FILE_DIR = CMakeFiles\ATNWrangler.dir
   TARGET_COMPILE_PDB = CMakeFiles\ATNWrangler.dir\
-  TARGET_PDB = ATNWrangler.pdb
+  TARGET_PDB = bin\ATNWrangler.pdb
 
 
 # =============================================================================
@@ -76,9 +76,9 @@ build CMakeFiles\ATNWrangler.dir\BooleanNetworkModel.cpp.obj: CXX_COMPILER__ATNW
 
 
 #############################################
-# Link the executable ATNWrangler.exe
+# Link the executable bin\ATNWrangler.exe
 
-build ATNWrangler.exe: CXX_EXECUTABLE_LINKER__ATNWrangler_Debug CMakeFiles\ATNWrangler.dir\ATNWrangler.cpp.obj CMakeFiles\ATNWrangler.dir\Turing.cpp.obj CMakeFiles\ATNWrangler.dir\BooleanNetworkModel.cpp.obj
+build bin\ATNWrangler.exe: CXX_EXECUTABLE_LINKER__ATNWrangler_Debug CMakeFiles\ATNWrangler.dir\ATNWrangler.cpp.obj CMakeFiles\ATNWrangler.dir\Turing.cpp.obj CMakeFiles\ATNWrangler.dir\BooleanNetworkModel.cpp.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -86,9 +86,33 @@ build ATNWrangler.exe: CXX_EXECUTABLE_LINKER__ATNWrangler_Debug CMakeFiles\ATNWr
   POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_COMPILE_PDB = CMakeFiles\ATNWrangler.dir\
-  TARGET_FILE = ATNWrangler.exe
-  TARGET_IMPLIB = ATNWrangler.lib
-  TARGET_PDB = ATNWrangler.pdb
+  TARGET_FILE = bin\ATNWrangler.exe
+  TARGET_IMPLIB = bin\ATNWrangler.lib
+  TARGET_PDB = bin\ATNWrangler.pdb
+
+
+#############################################
+# Utility command for package
+
+build CMakeFiles\package.util: CUSTOM_COMMAND all
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe" --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build package: phony CMakeFiles\package.util
+
+
+#############################################
+# Utility command for package_source
+
+build CMakeFiles\package_source.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake D:/source/cpp/ATNWrangler/out/build/x64-debug/CPackSourceConfig.cmake"
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build package_source: phony CMakeFiles\package_source.util
 
 
 #############################################
@@ -114,9 +138,201 @@ build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/source/cpp/ATNWrangler/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target glad
+
+
+#############################################
+# Order-only phony target for glad
+
+build cmake_object_order_depends_target_glad: phony || .
+
+build thirdparty\glad\CMakeFiles\glad.dir\src\glad.c.obj: C_COMPILER__glad_unscanned_Debug D$:\source\cpp\ATNWrangler\thirdparty\glad\src\glad.c || cmake_object_order_depends_target_glad
+  DEFINES = -Dglad_EXPORTS
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI
+  INCLUDES = -ID:\source\cpp\ATNWrangler\thirdparty\glad\include
+  OBJECT_DIR = thirdparty\glad\CMakeFiles\glad.dir
+  OBJECT_FILE_DIR = thirdparty\glad\CMakeFiles\glad.dir\src
+  TARGET_COMPILE_PDB = thirdparty\glad\CMakeFiles\glad.dir\
+  TARGET_PDB = thirdparty\glad\glad.pdb
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target glad
+
+
+#############################################
+# Link the shared library thirdparty\glad\glad.dll
+
+build thirdparty\glad\glad.dll thirdparty\glad\glad.lib: C_SHARED_LIBRARY_LINKER__glad_Debug thirdparty\glad\CMakeFiles\glad.dir\src\glad.c.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL
+  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = thirdparty\glad\CMakeFiles\glad.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  RESTAT = 1
+  TARGET_COMPILE_PDB = thirdparty\glad\CMakeFiles\glad.dir\
+  TARGET_FILE = thirdparty\glad\glad.dll
+  TARGET_IMPLIB = thirdparty\glad\glad.lib
+  TARGET_PDB = thirdparty\glad\glad.pdb
+
+
+#############################################
+# Utility command for package
+
+build thirdparty\glad\CMakeFiles\package.util: CUSTOM_COMMAND thirdparty\glad\all
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe" --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build thirdparty\glad\package: phony thirdparty\glad\CMakeFiles\package.util
+
+
+#############################################
+# Utility command for package_source
+
+build thirdparty\glad\CMakeFiles\package_source.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake D:/source/cpp/ATNWrangler/out/build/x64-debug/CPackSourceConfig.cmake"
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build thirdparty\glad\package_source: phony thirdparty\glad\CMakeFiles\package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build thirdparty\glad\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug\thirdparty\glad && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build thirdparty\glad\edit_cache: phony thirdparty\glad\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build thirdparty\glad\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug\thirdparty\glad && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\source\cpp\ATNWrangler -BD:\source\cpp\ATNWrangler\out\build\x64-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build thirdparty\glad\rebuild_cache: phony thirdparty\glad\CMakeFiles\rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/source/cpp/ATNWrangler/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target raudio
+
+
+#############################################
+# Order-only phony target for raudio
+
+build cmake_object_order_depends_target_raudio: phony || .
+
+build thirdparty\raudio\CMakeFiles\raudio.dir\src\raudio.c.obj: C_COMPILER__raudio_unscanned_Debug D$:\source\cpp\ATNWrangler\thirdparty\raudio\src\raudio.c || cmake_object_order_depends_target_raudio
+  DEFINES = -Draudio_EXPORTS
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI
+  INCLUDES = -ID:\source\cpp\ATNWrangler\thirdparty\raudio\include
+  OBJECT_DIR = thirdparty\raudio\CMakeFiles\raudio.dir
+  OBJECT_FILE_DIR = thirdparty\raudio\CMakeFiles\raudio.dir\src
+  TARGET_COMPILE_PDB = thirdparty\raudio\CMakeFiles\raudio.dir\
+  TARGET_PDB = thirdparty\raudio\raudio.pdb
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target raudio
+
+
+#############################################
+# Link the shared library thirdparty\raudio\raudio.dll
+
+build thirdparty\raudio\raudio.dll thirdparty\raudio\raudio.lib: C_SHARED_LIBRARY_LINKER__raudio_Debug thirdparty\raudio\CMakeFiles\raudio.dir\src\raudio.c.obj
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Ob0 /Od /RTC1 -ZI
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL
+  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = thirdparty\raudio\CMakeFiles\raudio.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  RESTAT = 1
+  TARGET_COMPILE_PDB = thirdparty\raudio\CMakeFiles\raudio.dir\
+  TARGET_FILE = thirdparty\raudio\raudio.dll
+  TARGET_IMPLIB = thirdparty\raudio\raudio.lib
+  TARGET_PDB = thirdparty\raudio\raudio.pdb
+
+
+#############################################
+# Utility command for package
+
+build thirdparty\raudio\CMakeFiles\package.util: CUSTOM_COMMAND thirdparty\raudio\all
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe" --config ./CPackConfig.cmake"
+  DESC = Run CPack packaging tool...
+  pool = console
+  restat = 1
+
+build thirdparty\raudio\package: phony thirdparty\raudio\CMakeFiles\package.util
+
+
+#############################################
+# Utility command for package_source
+
+build thirdparty\raudio\CMakeFiles\package_source.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cpack.exe" --config ./CPackSourceConfig.cmake D:/source/cpp/ATNWrangler/out/build/x64-debug/CPackSourceConfig.cmake"
+  DESC = Run CPack packaging tool for source...
+  pool = console
+  restat = 1
+
+build thirdparty\raudio\package_source: phony thirdparty\raudio\CMakeFiles\package_source.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build thirdparty\raudio\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug\thirdparty\raudio && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build thirdparty\raudio\edit_cache: phony thirdparty\raudio\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build thirdparty\raudio\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D D:\source\cpp\ATNWrangler\out\build\x64-debug\thirdparty\raudio && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\source\cpp\ATNWrangler -BD:\source\cpp\ATNWrangler\out\build\x64-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build thirdparty\raudio\rebuild_cache: phony thirdparty\raudio\CMakeFiles\rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
-build ATNWrangler: phony ATNWrangler.exe
+build ATNWrangler: phony bin\ATNWrangler.exe
+
+build ATNWrangler.exe: phony bin\ATNWrangler.exe
+
+build glad: phony thirdparty\glad\glad.dll
+
+build glad.dll: phony thirdparty\glad\glad.dll
+
+build raudio: phony thirdparty\raudio\raudio.dll
+
+build raudio.dll: phony thirdparty\raudio\raudio.dll
 
 # =============================================================================
 # Folder targets.
@@ -126,7 +342,21 @@ build ATNWrangler: phony ATNWrangler.exe
 #############################################
 # Folder: D:/source/cpp/ATNWrangler/out/build/x64-debug
 
-build all: phony ATNWrangler.exe
+build all: phony bin\ATNWrangler.exe thirdparty\glad\all thirdparty\raudio\all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/glad
+
+build thirdparty\glad\all: phony thirdparty\glad\glad.dll
+
+# =============================================================================
+
+#############################################
+# Folder: D:/source/cpp/ATNWrangler/out/build/x64-debug/thirdparty/raudio
+
+build thirdparty\raudio\all: phony thirdparty\raudio\raudio.dll
 
 # =============================================================================
 # Built-in targets
@@ -135,14 +365,14 @@ build all: phony ATNWrangler.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake D$:\source\cpp\ATNWrangler\CMakeLists.txt
+build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake D$:\lib\opencv\build\OpenCVConfig-version.cmake D$:\lib\opencv\build\OpenCVConfig.cmake D$:\lib\opencv\build\x64\vc16\lib\OpenCVConfig.cmake D$:\lib\opencv\build\x64\vc16\lib\OpenCVModules-debug.cmake D$:\lib\opencv\build\x64\vc16\lib\OpenCVModules-release.cmake D$:\lib\opencv\build\x64\vc16\lib\OpenCVModules.cmake D$:\source\cpp\ATNWrangler\CMakeLists.txt D$:\source\cpp\ATNWrangler\thirdparty\glad\CMakeLists.txt D$:\source\cpp\ATNWrangler\thirdparty\raudio\CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake D$:\source\cpp\ATNWrangler\CMakeLists.txt: phony
+build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageHandleStandardArgs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\FindPackageMessage.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake D$:\lib\opencv\build\OpenCVConfig-version.cmake D$:\lib\opencv\build\OpenCVConfig.cmake D$:\lib\opencv\build\x64\vc16\lib\OpenCVConfig.cmake D$:\lib\opencv\build\x64\vc16\lib\OpenCVModules-debug.cmake D$:\lib\opencv\build\x64\vc16\lib\OpenCVModules-release.cmake D$:\lib\opencv\build\x64\vc16\lib\OpenCVModules.cmake D$:\source\cpp\ATNWrangler\CMakeLists.txt D$:\source\cpp\ATNWrangler\thirdparty\glad\CMakeLists.txt D$:\source\cpp\ATNWrangler\thirdparty\raudio\CMakeLists.txt: phony
 
 
 #############################################
